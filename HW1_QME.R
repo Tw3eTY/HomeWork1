@@ -63,4 +63,23 @@ sum(ResultsVector2) / length(ResultsVector2)
 # Make 1000 simulations of the profit and the price of the call option,
 # will be equal to the sum of all the profits divided by the number of 
 # simulations(in this case 1000).
+
+
+StrikePrice <- 120
+Profit <- 0
+Price <- 100
+
+for (k in 1:1000){
+  Price <- 100
+  for(i in 1:100){
+    Price = c(Price + rnorm(1, mean = 0, sd = 7))
+  }
+  if(Price > 120){
+    Profit = Profit + Price - 120
+  }
+  
+}
+Profit/1000
+
+
 #####Problem 4##### 
